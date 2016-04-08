@@ -1,0 +1,48 @@
+<script type="text/javascript">
+  RED.nodes.registerType('get-feeds',{
+    category: 'function',
+    color: '#28AFB0',
+    defaults: {
+      name: {
+				value: ''
+			},
+			oneFeedPerMsg: {
+				value: false,
+				type: 'boolean'
+			}
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'rss.png',
+    label: function() {
+      return this.name || 'get-feeds';
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="get-feeds">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-oneFeedPerMsg"><i class="icon-list"></i> One feed/msg</label>
+    <input type="checkbox" id="node-input-oneFeedPerMsg">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="get-feeds">
+  <p>
+		A node that extracts any <code>&lt;link rel=&quot;alternate&quot; ...&gt;</code> that points to
+		a RSS, Atom or ActivityStream feed from the input <code>payload</code>.
+	</p>
+	<p>
+		Any found feeds will be attached as the array <code>feeds</code> on the output message.
+		If the option <code>One feed/msg</code> is checked there will be one message sent per feed,
+		and the output message will contain a <code>feed</code> property instead of <code>feeds</code>.
+	</p>
+	<p>
+		If the input message contains a <code>url</code> property it will be used as
+		the <code>url</code> option for <a href="https://www.npmjs.com/package/get-feeds"><code>get-feeds</code></a> under the hood.
+	</p>
+</script>

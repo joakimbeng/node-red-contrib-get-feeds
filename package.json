@@ -1,0 +1,54 @@
+{
+  "name": "node-red-contrib-get-feeds",
+  "version": "0.1.0",
+  "description": "A Node-RED node to get all feeds from an HTML string",
+  "main": "src/get-feeds.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "xo && nyc --reporter=lcov --reporter=text ava",
+    "coverage": "nyc report --reporter=text-lcov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joakimbeng/node-red-contrib-get-feeds.git"
+  },
+  "keywords": [
+    "node-red",
+    "get",
+    "feed",
+    "html",
+    "rss",
+    "atom"
+  ],
+  "author": {
+    "name": "Joakim Carlstein",
+    "email": "joakim@beng.se",
+    "url": "http://joakim.beng.se"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joakimbeng/node-red-contrib-get-feeds/issues"
+  },
+  "homepage": "https://github.com/joakimbeng/node-red-contrib-get-feeds#readme",
+  "xo": {
+    "envs": [
+      "node"
+    ]
+  },
+  "node-red": {
+    "nodes": {
+      "get-feeds": "src/get-feeds.js"
+    }
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "coveralls": "^2.11.9",
+    "nyc": "^6.2.1",
+    "xo": "^0.13.0"
+  },
+  "dependencies": {
+    "get-feeds": "^1.0.0"
+  }
+}
